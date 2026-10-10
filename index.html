@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0d1b3d">
+<meta name="color-scheme" content="light">
+<title>Emna Azem | Front-end Developer</title>
+<meta name="description" content="مطورة واجهات React وJavaScript وFirebase. مواقع حجز وصفحات تعريفية وتصليح bugs.">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  /* الألوان */
+  :root { color-scheme:light; --nuit:#0d1b3d; --rouge:#e4472b; --creme:#fbf3e4; --texte:#14182b; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; font-family:'Cairo',sans-serif; background:var(--creme); color:var(--texte); line-height:1.7; }
+  .wrap { max-width:1000px; margin:0 auto; padding:0 1.2rem; }
+  section { padding:4rem 0; }
+  h2 { font-weight:900; font-size:clamp(2rem,6vw,3rem); margin:0 0 .5rem; line-height:1.2; }
+  a:focus-visible,button:focus-visible { outline:3px solid var(--rouge); outline-offset:2px; }
+
+  /* الهيدر */
+  nav { display:flex; justify-content:space-between; align-items:center; padding:1rem 0; font-weight:700; }
+  nav a { color:#fff; text-decoration:none; margin-inline-start:1.2rem; }
+  nav .logo { font-family:'Anton',sans-serif; letter-spacing:1px; font-size:1.4rem; margin:0; }
+
+  /* HERO: الاسم الكبير هو الصورة الأولى للصفحة */
+  .hero { background:var(--nuit); color:#fff; padding-bottom:4rem; }
+  .name { font-family:'Anton',sans-serif; font-weight:400; direction:ltr; text-align:left; font-size:clamp(4.2rem,19vw,12rem); line-height:.95; margin:2.5rem 0 1rem; text-transform:uppercase; }
+  .name span { color:var(--rouge); }
+  .hero p { font-size:1.25rem; max-width:34rem; margin:0 0 1.5rem; }
+  .stack { direction:ltr; text-align:left; font-weight:700; letter-spacing:.5px; color:#ffd8cf; margin-bottom:1.5rem; }
+
+  .btn { display:inline-block; background:var(--rouge); color:#fff; text-decoration:none; font-weight:700; padding:.75rem 1.7rem; border:3px solid #fff; margin-inline-end:.6rem; margin-bottom:.6rem; }
+  .btn:hover { background:#fff; color:var(--nuit); }
+  .btn.dark { border-color:var(--nuit); }
+  .btn.dark:hover { background:var(--nuit); color:#fff; }
+
+  /* الخدمات */
+  .services { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; margin-top:1.5rem; }
+  .service { background:#fff; border:3px solid var(--nuit); padding:1.3rem; }
+  .service h3 { margin:0 0 .3rem; font-size:1.2rem; font-weight:900; }
+  .service p { margin:0; font-size:.98rem; }
+
+  /* المشاريع */
+  .projects { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:1.3rem; margin-top:1.5rem; }
+  .card { background:#fff; border:3px solid var(--nuit); display:flex; flex-direction:column; transition:transform .15s; }
+  .card:hover { transform:translateY(-4px); }
+  .card .top { background:var(--nuit); color:#fff; padding:1rem 1.2rem; }
+  .card .top h3 { margin:0; font-size:1.3rem; font-weight:900; }
+  .badge { display:inline-block; margin-top:.3rem; font-size:.8rem; font-weight:700; background:var(--rouge); padding:0 .6rem; }
+  .card .body { padding:1.2rem; flex:1; display:flex; flex-direction:column; }
+  .card p { margin:0 0 1rem; }
+  .chips { display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:1rem; direction:ltr; }
+  .chips span { border:2px solid var(--nuit); font-size:.8rem; font-weight:700; padding:0 .5rem; }
+  .links { margin-top:auto; }
+  .links a { display:inline-block; font-weight:700; color:var(--nuit); border:3px solid var(--nuit); padding:.3rem 1rem; text-decoration:none; margin-inline-end:.5rem; }
+  .links a:hover { background:var(--nuit); color:#fff; }
+  .soon { display:inline-block; font-weight:700; color:#6b7280; padding:.3rem 0; }
+
+  /* الخبرة */
+  .exp { background:var(--rouge); color:#fff; }
+  .exp ul { padding-inline-start:1.2rem; font-size:1.1rem; max-width:40rem; }
+
+  /* التواصل */
+  .contact { background:var(--nuit); color:#fff; text-align:center; }
+  .contact h2 { font-size:clamp(2.2rem,8vw,4rem); }
+  footer { background:var(--nuit); color:#aab; text-align:center; padding:1rem; font-size:.85rem; }
+</style>
+</head>
+
+<body>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="wrap">
+    <nav>
+      <span class="logo">EA</span>
+      <div><a href="#services">خدماتي</a><a href="#projects">مشاريعي</a><a href="#contact">تواصل</a></div>
+    </nav>
+    <h1 class="name">Emna<br><span>Azem</span></h1>
+    <div class="stack">React · JavaScript · Firebase · HTML/CSS</div>
+    <p>مطورة واجهات (Front-end) بخبرة أكثر من 7 سنين. نبني مواقع حجز وصفحات تعريفية ونصلح مشاكل الواجهات للأنشطة الصغيرة والمتوسطة.</p>
+    <a class="btn" href="#projects">شوف مشاريعي</a>
+    <a class="btn" href="#contact">ابعثلي طلبك</a>
+  </div>
+</header>
+
+<!-- ===== الخدمات ===== -->
+<section id="services">
+  <div class="wrap">
+    <h2>شنوة نعمل</h2>
+    <div class="services">
+      <div class="service"><h3>صفحات تعريفية</h3><p>موقع سريع وجميل لقاعة أفراح أو صالة رياضة أو محل، يخدم مليح في التليفون.</p></div>
+      <div class="service"><h3>نظام حجز</h3><p>تقويم وحجوزات وقاعدة بيانات بـ Firebase، مع لوحة تحكم تقبل وترفض الطلبات.</p></div>
+      <div class="service"><h3>تصليح الواجهات</h3><p>مشاكل CSS وresponsive وتعديلات صغيرة على موقع موجود.</p></div>
+      <div class="service"><h3>React وFirebase</h3><p>تصليح bugs وإضافة ميزات على تطبيقات React، مع تسجيل دخول وFirestore.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== المشاريع (تتعمل بالـ JavaScript من القائمة تحت) ===== -->
+<section id="projects" style="padding-top:0">
+  <div class="wrap">
+    <h2>مشاريعي</h2>
+    <div class="projects" id="grid"></div>
+  </div>
+</section>
+
+<!-- ===== الخبرة ===== -->
+<section class="exp">
+  <div class="wrap">
+    <h2>الخبرة</h2>
+    <ul>
+      <li>أكثر من 7 سنين كمهندسة Front-end / Full-stack في 5 شركات.</li>
+      <li>خبرة سابقة في Angular وTypeScript وFlutter وASP.NET Core.</li>
+      <li>خدمت عن بعد بالكامل في فريق ألماني (L-mobile) من 2021 إلى 2023.</li>
+      <li>مهندسة وطنية من جامعة العلوم بتونس.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== التواصل ===== -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>عندك مشروع؟</h2>
+    <p>احكيلي شنوة تحتاج، وناخذ منك الفكرة ونرجعلك بعرض واضح.</p>
+    <a class="btn" href="mailto:azememna@hotmail.fr">إيميل</a>
+    <a class="btn" href="https://wa.me/21654012599?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A7%D9%84%D8%A8%D9%88%D8%B1%D8%AA%D9%81%D9%88%D9%84%D9%8A%D9%88%20%D9%88%D9%86%D8%AD%D8%A8%20%D9%86%D8%AA%D9%81%D8%A7%D9%87%D9%85%20%D9%85%D8%B9%D8%A7%D9%83" target="_blank" rel="noopener">واتساب</a>
+    <a class="btn" href="https://www.linkedin.com/in/azem-emna-3ab90835" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</section>
+
+<footer>&copy; 2026 Emna Azem</footer>
+
+<script>
+/* ===== قائمة المشاريع: هنا برك تبدّل. زيد مشروع = زيد كتلة { } ===== */
+/* demo و code: لصق الرابط. كان خليتو '' الزر ما يظهرش */
+const projets = [
+  {
+    titre: 'رفيق العمرة',
+    type: 'مشروع حقيقي',
+    desc: 'تطبيق لوكالات السفر لتتبع الحجاج: GPS مباشر، إدارة الرحلات، وبرنامج يومي لـ 3 أنواع مستخدمين (مدير الوكالة، المرشد، الحاج).',
+    tech: ['React', 'Vite', 'Firebase Auth', 'Firestore', 'Vercel'],
+    demo: '',
+    code: ''
+  },
+  {
+    titre: 'EduInfo TN',
+    type: 'مشروع حقيقي',
+    desc: 'منصة تعليم أونلاين لتلاميذ الثانوي في تونس، مع حسابات مستخدمين وقاعدة بيانات.',
+    tech: ['JavaScript', 'Tailwind CSS', 'Firebase Auth', 'Firestore'],
+    demo: 'https://learning-platform-three-sigma.vercel.app/',
+    code: ''
+  },
+  {
+    titre: 'Online Store',
+    type: 'مشروع حقيقي',
+    desc: 'متجر إلكتروني لعرض المنتجات أونلاين.',
+    tech: ['JavaScript', 'HTML', 'CSS'],
+    demo: 'https://online-store-4px3.vercel.app/',
+    code: ''
+  },
+  {
+    titre: 'قاعة أفراح: صفحة تعريفية',
+    type: 'نموذج',
+    desc: 'صفحة لقاعة أفراح فيها تقويم تواريخ، باقات، وزر يبعث طلب الحجز في واتساب.',
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    demo: 'https://qsar-yasmin-f-tes.vercel.app/',
+    code: ''
+  },
+  {
+    titre: 'Titan Gym: صفحة صالة رياضة',
+    type: 'نموذج',
+    desc: 'صفحة لصالة رياضة: برنامج أسبوعي بالأيام، حاسبة IMC، أسعار، وفورم أساسي يبعث في واتساب.',
+    tech: ['HTML', 'CSS', 'Bootstrap', 'JavaScript'],
+    demo: 'https://titan-gym-beta.vercel.app/',
+    code: ''
+  },
+  {
+    titre: 'كراء السيارات: صفحة عرض وحجز',
+    type: 'نموذج',
+    desc: 'صفحة لوكالات كراء السيارات: اختيار سيارة، تقويم بالأيام المتاحة والمحجوزة، وطلب حجز يوصل في واتساب.',
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    demo: 'https://location-voitures-one.vercel.app/',
+    code: ''
+  }
+];
+
+// لكل مشروع نبني كارت ونحطو في الصفحة
+const grid = document.getElementById('grid');
+grid.innerHTML = projets.map(p => `
+  <article class="card">
+    <div class="top"><h3>${p.titre}</h3><span class="badge">${p.type}</span></div>
+    <div class="body">
+      <p>${p.desc}</p>
+      <div class="chips">${p.tech.map(t => `<span>${t}</span>`).join('')}</div>
+      <div class="links">
+        ${p.demo ? `<a href="${p.demo}" target="_blank" rel="noopener">شوف الموقع ↗</a>` : '<span class="soon">الرابط قريباً</span>'}
+        ${p.code ? `<a href="${p.code}" target="_blank" rel="noopener">Code</a>` : ''}
+      </div>
+    </div>
+  </article>`).join('');
+</script>
+</body>
+</html>
